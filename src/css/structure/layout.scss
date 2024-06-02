@@ -1,1 +1,325 @@
-﻿
+﻿body {    
+    background:no-repeat url(../images/cloudbg2.avif) top left;
+    background-size: cover;
+    min-height:100vh;
+    @media #{$non-mobile}{
+      display:grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+      "ticket"
+      "barcode";
+    }
+    @media #{$desktop-lg}{
+      grid-template-columns:1fr minmax(99.2rem, 120rem) 1fr;
+      grid-template-areas:
+      ". ticket .";
+    }
+  }
+  .ticket{
+    @media #{$non-mobile}{
+      grid-area:ticket;
+      display:flex;
+      flex-wrap: wrap;
+      min-height: 56rem;
+      max-width:118.3rem;    
+      align-self: center;
+      position:relative;
+    }
+    @media #{$desktop-lg}{
+      &::before{
+        position: absolute;
+        content: "";
+        display: block;
+        left: 2%;
+        top: 5%;
+        width: 95%;
+        height: 80%;  
+        box-shadow: rgb(162, 174, 172) 0 4.8rem 10rem 0;
+        z-index: -1;
+      }
+    }
+    
+    header{
+      display:flex;
+      .to{
+        position: relative;  
+        &::before{
+          content:url("data:image/svg+xml, %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 59 32'%3E%3Cpath d='M24.951 28.265h3.39l5.573-10.056h5.246c0.906 0 2.294-0.734 2.294-1.64 0-0.905-1.388-1.639-2.294-1.639h-5.246l-5.573-10.056h-3.39l2.841 10.056h-5.769l-2.45-3.607h-1.766l1.481 5.246-1.481 5.246h1.766l2.45-3.607h5.769l-2.841 10.056z' style='fill:%23b0bab9;fill-rule:nonzero;'%3E%3C/path%3E%3Cpath d='M2.414 16.265h14.898v0.61h-14.898v-0.61z' style='fill:%23b0bab9;fill-rule:nonzero;'%3E%3C/path%3E%3Cpath d='M43.125 16.265h14.898v0.61h-14.898v-0.61z' style='fill:%23b0bab9;fill-rule:nonzero;'%3E%3C/path%3E%3C/svg%3E");
+          display: block;
+          position: absolute;
+          z-index:-1;
+        }
+      }
+      > div{
+        flex-basis:50rem;
+        align-self: center;
+        text-align: center;
+      }
+      h2{
+        color:rgb(4, 216, 220);
+        font-weight: 700;
+        margin:0;
+      }
+      p{
+        margin:0;      
+      }
+    }
+  }
+  .plane-info{
+    display:flex;
+    gap: 1rem;
+    transition:gap  .5s ease-in-out;
+    @media #{non-mobile}{
+      gap:2.8rem
+    }
+    li{
+      align-self: center;
+      list-style-type: none;
+      flex-basis:.1rem;
+      flex-grow:1;
+    }
+    strong{
+      font-weight: 700;
+      color:rgb(4, 216, 220);
+      display:block;
+    }
+  }
+  
+  
+  .ticket-detail{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding:2rem 0;    
+    z-index:1;
+    position:relative;
+
+    @media #{$non-mobile}{
+      flex-grow:1;
+      padding:5.6rem;
+    }
+
+    @media #{$desktop-lg}{
+      background: url(../images/info-background.svg) no-repeat right top;
+      background-size:auto 56.2rem;
+      flex-basis:78rem;
+      max-width:78rem;
+    }
+  
+    header{
+      min-height: 10.4rem;
+      margin-bottom:2.7rem;
+      padding: .5rem;
+
+      @media #{$non-mobile}{
+        min-height: 19.4rem;
+        padding: 0.1rem 1.3rem 0 3.8rem;          
+      }
+
+      .to{
+        &::before{
+          top: 1.5rem;
+          left: -5rem;
+          width: 11rem;
+          height: 5rem;
+        }
+      }
+      h2{
+        font-size: 4.2rem;
+        line-height: 5.3rem; 
+        padding-top:0.9rem;    
+        transition:font-size .5s ease-in-out, line-height .5s ease-in-out;
+
+        @media screen and (min-width:768px){
+          font-size: 8.2rem;
+          line-height: 7.3rem; 
+        }
+      }
+      p{
+        font-size:1.8rem;
+        letter-spacing: 0.09rem;
+        transition:font-size .5s ease-in-out;
+        @media screen and (min-width:768px){
+          font-size:2.4rem;
+        }
+      }
+    }
+    .plane-info{
+      font-size:2.1rem;
+      min-height: 7rem;
+      padding:0.3rem 2rem;
+      background-color: rgb(229, 251, 251);
+      box-shadow:rgb(225, 248, 249) 0 0 5px 2px;  
+      @media #{$non-mobile}{
+        min-height: 10.9rem;
+        padding:0.3rem 5.4rem;
+      }
+      @media #{$desktop-lg}{
+        padding:0.6rem 0 0.3rem 5.4rem;
+      }
+      li{
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        transition:font-size .5s ease-in-out, line-height .5s ease-in-out;
+
+        @media screen and (min-width:1200px){
+          font-size: 2.2rem;
+          line-height: 3.6rem;        }
+      }
+      strong{
+        font-size: 2.2rem;
+        transition:font-size .5s ease-in-out;
+
+        @media screen and (min-width:1200px){
+          font-size: 2.8rem;
+        }
+      }
+    }
+    footer{
+      font-size:1.2rem;
+      color:rgb(108, 108, 108);
+      margin-top:2rem;
+      padding:0 2rem;
+      transition:font-size .5s ease-in-out, color .5s ease-in-out, padding  .5s ease-in-out, margin .5s ease-in-out;
+        @media #{$non-mobile}{   
+          color:rgb(189, 189, 189); 
+          font-size:1.9rem;  
+          margin-top:5rem;  
+          padding:0;
+        }
+    }
+  }
+  .ticket-remove{
+    background:rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index:-1;
+    @media #{$non-mobile}{
+      flex-basis: 100%;  
+      flex-shrink: 0;
+      min-width: 40.3rem;
+      height: 56.2rem;
+    }
+    @media #{$desktop-lg}{
+      background-color: unset;
+      background-size: auto 56.2rem;
+      flex-basis: content;
+      &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 40.3rem;
+        height: 56.2rem;
+        background: no-repeat url(../images/info-background.svg) -88.3rem top;
+        background-size: auto 56.2rem;
+        transform: scaleX(-1);
+        z-index: -1;  
+      }
+    }
+    &::before{
+      @media #{$non-mobile}{
+        content:url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' viewBox='0 0 234 2331' version='1.1' xmlns='http://www.w3.org/2000/svg'%3E%3Crect id='Artboard1' x='0' y='0' width='233.985' height='2330.05' style='fill:none;'/%3E%3Crect x='0.112' y='163.908' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='249.101' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='334.294' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='419.487' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='504.68' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='589.873' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='675.067' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='760.26' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='845.453' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='930.646' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1015.84' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1101.03' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1186.23' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1271.42' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1356.61' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1441.8' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1527' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1612.19' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1697.38' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1782.58' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1867.77' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='1952.96' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='2038.16' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3Crect x='0.112' y='2123.35' width='4.167' height='41.667' style='fill:%23b0bab9;'/%3E%3C/svg%3E");
+        position: absolute;
+        top: -253px;
+        left: 50%;
+        display: block;     
+        transform:rotate(90deg);
+        height:56.2rem;
+        width: 5.6rem;
+      }
+      @media #{$desktop-lg}{
+        left:0;
+        top:0;
+        height:56.2rem;
+        width: 5.6rem;
+        transform:rotate(0);
+      }
+    }
+    .rotation{
+      @media #{$desktop-lg}{
+        height: 40.3rem;
+        width: 56.2rem;
+        position: absolute;
+        transform: rotate(-90deg) translate(-8rem, -8rem);
+      }
+    }
+    header{
+      min-height: 5rem;
+      margin:0;
+      padding: 4.5rem 3.5rem 0 3.5rem;
+      transition: padding .5s ease-in-out;
+      @media #{$non-mobile}{
+        margin: 7.5rem 1rem 0;
+        padding: 0.1rem 7.5rem 0 8.5rem;
+      }
+      .to{
+       &::before{
+        top: 0.7rem;
+        left: -3.4rem;
+        width: 7.3rem;
+        height: 1rem;
+        transition: top .5s ease-in-out;
+        @media screen and (min-width:768px){
+          top: -0.4rem;
+        }
+        }
+      }
+      h2{
+        font-size: 4.2rem;
+        line-height: 5.3rem; 
+        transition:font-size .5s ease-in-out, line-height .5s ease-in-out;
+        @media screen and (min-width:768px){
+          font-size: 5.3rem;
+          line-height: 3.5rem;
+        }
+      }    
+      p{
+        font-size:1.8rem;
+        letter-spacing: 0.09rem;
+        transition:font-size .5s ease-in-out;
+        @media screen and (min-width:1200px){
+          font-size: 1.4rem;
+          line-height: 2.7rem;
+          letter-spacing: .1rem;
+        }
+      }
+    }
+    .plane-info{
+      min-height: 8.1rem;
+      padding: 0 2rem;
+      @media #{non-mobile}{
+        padding: 0 7.6rem;
+      }
+      li{
+        font-size: 1.3rem;
+        line-height: 2.8rem;
+        flex-basis:20ch;
+        white-space: nowrap;
+        transition:font-size .5s ease-in-out, line-height .5s ease-in-out;
+        @media screen and (min-width:768){
+          font-size: 1.8rem;
+          line-height: 2.8rem;
+        }
+      }
+      strong{
+        font-size: 1.9rem;
+        transition:font-size .5s ease-in-out;
+
+        @media screen and (min-width:768){
+          font-size: 2.4rem;
+        }
+      }
+    }
+    .barcode{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem 0 3.7rem;
+      svg{
+        width: 100%;
+        max-width: 34.5rem;
+        height: auto;
+      }
+  
+      line{
+        stroke:#000;
+      }
+    }
+  }

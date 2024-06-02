@@ -1,0 +1,19 @@
+﻿/*========== Media Queries ==========*/
+$mobile-sm: "only screen and (max-width: 374px)";
+$mobile: "only screen and (max-width: 767px)";
+$non-mobile: "only screen and (min-width: 768px)";
+$desktop: "only screen and (min-width: 992px)";
+$desktop-sm: "only screen and (min-width: 1070px)";
+$desktop-lg: "only screen and (min-width: 1200px)";
+$desktop-xl: "only screen and (min-width: 1441px)";
+$desktop-max: "only screen and (min-width: 1600px)";
+
+
+/*========== Colors ==========*/
+
+$white: #ffffff;
+$black: #000000;
+$error: #ff0000;
+
+/*========== Fonts ==========*/
+$font: 'mainfoint', sans-serif;

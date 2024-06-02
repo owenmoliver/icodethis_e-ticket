@@ -1,0 +1,46 @@
+﻿.center {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.container-fluid, .container {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1149px;
+}
+
+@media only screen and (max-width: 769px) {
+    .container-fluid.full-width, .container.full-width {
+        padding-right: 0;
+        padding-left: 0
+    }
+}
+
+.row {
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row.reverse {
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse
+}
+
+.col.reverse {
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse
+}
+

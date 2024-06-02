@@ -1,0 +1,25 @@
+﻿@mixin background-image ($path, $extension, $background-size, $repeat, $position) {
+    background-size: unquote($background-size);
+    background-repeat: unquote($repeat);
+    background-position: unquote($position);
+
+    .no-webp & {
+        background-image: url("/dist/images/" + $path + "." + $extension);
+    }
+
+    .webp & {
+        background-image: url("/dist/images/" + $path + ".webp");
+    }
+}
+
+@mixin mobile-to-below-desktop-lg {
+  @media only screen and (max-width: 1149px) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}

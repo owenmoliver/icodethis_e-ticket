@@ -1,0 +1,36 @@
+.center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-fluid, .container {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1149px;
+}
+
+@media only screen and (max-width: 769px) {
+  .container-fluid.full-width, .container.full-width {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+.col.reverse {
+  flex-direction: column-reverse;
+}/*# sourceMappingURL=utilities.css.map */
